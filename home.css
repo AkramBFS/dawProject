@@ -11,7 +11,11 @@
     justify-content: space-between;
     padding: 20px 80px;
     box-shadow: 0px 5px 15px rgb(0,0,0,0.06);
-
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    left: 0;
+    
 }
 .logo {
     margin-left: -50px;
@@ -72,12 +76,28 @@
     justify-content: center;
     font-size: xx-large;
 }
+
+#hero h3+h1{
+    color: #7D1E3F;
+}
+
 #hero button{
+    margin-top: 30px;
     border-radius: 5px;
-    font-size: 16px;
-    font-weight: bold;
-    background-color: transparent;
-    color: #dda15e;
+    font-size: 20px;
+    font-weight: 700;
     border: 0;
     padding: 14px 80px 14px 65px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+    border: none;
+    outline: none;
+    background: linear-gradient(45deg, #DDA15E, #E6B07E);
+    color: #252627;
+    box-shadow: 0 0 10px #E6B07E;
+    border-radius: 50px;
 }
