@@ -145,11 +145,12 @@
         <!-- Product Section-->
     <section id="product-section" >
         <div class="small-container">
+            <div id="product-list">
             <h2>Featured</h2>
             <div class="line1"></div>
             <div class="child">
                 <div class="childprods">
-                    <a href="./product_details.html"><img src="image/prods/T-Shirts for Men.jpg"></a>
+                    <a href="./product_details.html?id=1"><img src="image/prods/T-Shirts for Men.jpg"></a>
                     <h4>T-Shirts for Men</h4>
                     <div class="rating">
                         <i class="fa fa-star"></i>
@@ -161,7 +162,7 @@
                     <p>$41.99</p>
                 </div>
                 <div class="childprods">
-                    <a href="./product_details.html"><img src="image/prods/Sports Shoes.webp"></a>
+                    <a href="./product_details.html?id=3"><img src="image/prods/Sports Shoes.webp"></a>
                     <h4>Sports Shoes </h4>
                     <div class="rating">
                         <i class="fa fa-star"></i>
@@ -173,7 +174,7 @@
                     <p>$139.99</p>
                 </div>
                 <div class="childprods">
-                    <a href="./product_details.html"><img src="image/prods/Casual Hoodies.avif"></a>
+                    <a href="./product_details.html?id=9"><img src="image/prods/Casual Hoodies.avif"></a>
                     <h4>Casual Hoodies</h4>
                     <div class="rating">
                         <i class="fa fa-star"></i>
@@ -188,85 +189,225 @@
                 
             </div>
             <h2>Our Products</h2>
-            <div class="line1"></div>
-            <div class="child">
-                <div class="childprods">
-                    <a href="./product_details.html"><img src="image/prods/T-Shirts for Men.jpg"></a>
-                    <h4>T-Shirts for Men</h4>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                    </div>
-                    <p>$41.99</p>
-                </div>
-                <div class="childprods">
-                    <a href="./product_details.html"><img src="image/prods/Sports Shoes.webp"></a>
-                    <h4>Sports Shoes </h4>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-half-o"></i>
-                    </div>
-                    <p>$139.99</p>
-                </div>
-                <div class="childprods">
-                    <a href="./product_details.html"><img src="image/prods/Casual Hoodies.avif"></a>
-                    <h4>Casual Hoodies</h4>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                    <p>$59.99</p>
-                </div>
-                <div class="childprods">
-                    <a href="./product_details.html"><img src="image/prods/Black jeans.png"></a>
-                    <h4>Black jeans</h4>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-o"></i>
-                    </div>
-                    <p>$59.99</p>
-                </div>
-                <div class="childprods">
-                    <a href="./product_details.html"><img src="image/prods/socks.webp"></a>
-                    <h4>Socks</h4>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-half-o"></i>
-                        <i class="fa fa-star-o"></i>
-                    </div>
-                    <p>$15.99</p>
-                </div>
-                <div class="childprods">
-                    <a href="./product_details.html"><img src="image/prods/Sweatpants.webp"></a>
-                    <h4>Sweatpants</h4>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-half-o"></i>
-                        <i class="fa fa-star-o"></i>
-                    </div>
-                    <p>$80.99</p>
-                </div>
-                
+            <label for="categoryFilter">Category:</label>
+<select id="categoryFilter">
+    <option value="all">All</option>
+    <option value="T-shirts">T-shirts</option>
+    <option value="Shoes">Shoes</option>
+    <option value="Hoodies">Hoodies</option>
+    <option value="Jeans">Jeans</option>
+</select>
+
+<label for="sizeFilter">Size:</label>
+<select id="sizeFilter">
+    <option value="all">All</option>
+    <option value="S">Small (S)</option>
+    <option value="L">Large (L)</option>
+    <option value="39">Size 39 (Shoes)</option>
+    <option value="40">Size 40 (Shoes)</option>
+    <option value="41">Size 41 (Shoes)</option>
+    <option value="42">Size 42 (Shoes)</option>
+    <option value="43">Size 43 (Shoes)</option>
+</select>
+<script src="app.js"></script>
+<ul id="productList">
+    <div class="line1"></div>
+    <div class="child">
+        <!-- T-Shirts for Men -->
+        <div class="childprods" data-category="T-shirts" data-size="S" data-price="41.99">
+            <a href="./product_details.html?id=1"><img src="image/prods/T-Shirts for Men.jpg"></a>
+            <h4>T-Shirts for Men (S)</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+                <i class="fa fa-star-o"></i>
             </div>
+            <p>$41.99</p>
         </div>
-    </section>
-    <ul id="productList"></ul>
+        <div class="childprods" data-category="T-shirts" data-size="L" data-price="41.99">
+            <a href="./product_details.html?id=2"><img src="image/prods/T-Shirts for Men.jpg"></a>
+            <h4>T-Shirts for Men (L)</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <p>$41.99</p>
+        </div>
+
+        <!-- Sports Shoes -->
+        <div class="childprods" data-category="Shoes" data-size="39" data-price="139.99">
+            <a href="./product_details.html?id=3"><img src="image/prods/Sports Shoes.webp"></a>
+            <h4>Sports Shoes (39)</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+            </div>
+            <p>$139.99</p>
+        </div>
+        <div class="childprods" data-category="Shoes" data-size="40" data-price="139.99">
+            <a href="./product_details.html?id=4"><img src="image/prods/Sports Shoes.webp"></a>
+            <h4>Sports Shoes (40)</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+            </div>
+            <p>$139.99</p>
+        </div>
+        <div class="childprods" data-category="Shoes" data-size="41" data-price="139.99">
+            <a href="./product_details.html?id=5"><img src="image/prods/Sports Shoes.webp"></a>
+            <h4>Sports Shoes (41)</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+            </div>
+            <p>$139.99</p>
+        </div>
+        <div class="childprods" data-category="Shoes" data-size="42" data-price="139.99">
+            <a href="./product_details.html?id=6"><img src="image/prods/Sports Shoes.webp"></a>
+            <h4>Sports Shoes (42)</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+            </div>
+            <p>$139.99</p>
+        </div>
+        <div class="childprods" data-category="Shoes" data-size="43" data-price="139.99">
+            <a href="./product_details.html?id=7"><img src="image/prods/Sports Shoes.webp"></a>
+            <h4>Sports Shoes (43)</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+            </div>
+            <p>$139.99</p>
+        </div>
+
+        <!-- Casual Hoodies -->
+        <div class="childprods" data-category="Hoodies" data-size="S" data-price="59.99">
+            <a href="./product_details.html?id=8"><img src="image/prods/Casual Hoodies.avif"></a>
+            <h4>Casual Hoodies (S)</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+            </div>
+            <p>$59.99</p>
+        </div>
+        <div class="childprods" data-category="Hoodies" data-size="L" data-price="59.99">
+            <a href="./product_details.html?id=9"><img src="image/prods/Casual Hoodies.avif"></a>
+            <h4>Casual Hoodies (L)</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+            </div>
+            <p>$59.99</p>
+        </div>
+
+        <!-- Black Jeans -->
+        <div class="childprods" data-category="Jeans" data-size="S" data-price="59.99">
+            <a href="./product_details.html?id=10"><img src="image/prods/Black jeans.png"></a>
+            <h4>Black Jeans (S)</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <p>$59.99</p>
+        </div>
+        <div class="childprods" data-category="Jeans" data-size="L" data-price="59.99">
+            <a href="./product_details.html?id=11"><img src="image/prods/Black jeans.png"></a>
+            <h4>Black Jeans (L)</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <p>$59.99</p>
+        </div>
+
+        <!-- Socks -->
+        <div class="childprods" data-category="Socks" data-size="S" data-price="15.99">
+            <a href="./product_details.html?id=12"><img src="image/prods/socks.webp"></a>
+            <h4>Socks (S)</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <p>$15.99</p>
+        </div>
+        <div class="childprods" data-category="Socks" data-size="L" data-price="15.99">
+            <a href="./product_details.html?id=13"><img src="image/prods/socks.webp"></a>
+            <h4>Socks (L)</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <p>$15.99</p>
+        </div>
+
+        <!-- Sweatpants -->
+        <div class="childprods" data-category="Sweatpants" data-size="S" data-price="80.99">
+            <a href="./product_details.html?id=14"><img src="image/prods/Sweatpants.webp"></a>
+            <h4>Sweatpants (S)</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <p>$80.99</p>
+        </div>
+        <div class="childprods" data-category="Sweatpants" data-size="L" data-price="80.99">
+            <a href="./product_details.html?id=15"><img src="image/prods/Sweatpants.webp"></a>
+            <h4>Sweatpants (L)</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <p>$80.99</p>
+        </div>
+    </div>
+</ul>
+    <script src="product.js"></script>
+    <script src="app.js"></script>
 </body>
 <footer class="site-footer myfooter">
     <div class="container">

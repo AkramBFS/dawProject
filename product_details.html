@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="product.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="cart.html">Cart</a>
+        </nav>
+    </header>
+
+    <div class="product-details-container">
+    <div id="product-details">
+        <!-- Dynamically Inserted Product Details -->
+        <!-- Example: Product image, name, price, etc. -->
+    
+        <!-- Size Selector (Only S and L) -->
+        <div id="size-selector">
+            <button class="size-option" data-size="S">S</button>
+            <button class="size-option" data-size="L">L</button>
+        </div>
+    
+        <!-- Selected Size Display -->
+        <p>Selected Size: <span id="selected-size">None</span></p>
+    
+    
+    </div>
+    </div>
+    <div class="button-container">
+    <button onclick="addToCart()" class="add-to-cart-btn">Add to Cart</button>
+    <a href="cart.html" class="go-to-cart-btn">Go to Cart</a>
+    </div>
+    <script src="product_details.js"></script>
+</body>
+</html>
