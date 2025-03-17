@@ -96,3 +96,27 @@ document.addEventListener("DOMContentLoaded", () => {
     categoryFilter.addEventListener("change", filterAndSortProducts);
     sizeFilter.addEventListener("change", filterAndSortProducts);
 });
+
+// scroll
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Home (no scrolling)
+    document.getElementById("see-more-home").addEventListener("click", () => {
+        // No action needed for Home
+    });
+
+    // Products (scroll to Featured Products)
+    document.getElementById("see-more-products").addEventListener("click", () => {
+        document.getElementById("product-section").scrollIntoView({ behavior: "smooth" });
+    });
+
+    // Contact (scroll to Footer)
+    document.getElementById("see-more-contact").addEventListener("click", () => {
+        document.querySelector("footer").scrollIntoView({ behavior: "smooth" });
+    });
+
+    // About (scroll to Footer)
+    document.getElementById("see-more-about").addEventListener("click", () => {
+        document.querySelector("footer").scrollIntoView({ behavior: "smooth" });
+    });
+});
