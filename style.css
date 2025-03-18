@@ -25,6 +25,45 @@ header a{
     color: #eee;
     margin-right: 40px;
 }
+
+nav {
+  display: flex;
+  gap: 15px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  nav {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 50px;
+      left: 0;
+      background: #333;
+      width: 100%;
+      text-align: center;
+      padding: 10px 0;
+  }
+
+  nav.active {
+      display: flex;
+  }
+
+  .hamburger {
+      display: block;
+  }
+}
   
   
 /* carousel */
