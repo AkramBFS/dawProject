@@ -381,6 +381,16 @@ header a{
   justify-content: space-around;
 }
 
+#categoryLabel, #sizeLabel{
+    font-size: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+ #categoryFilter{
+     font-size: 15px;
+     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+ }
+
 /* footer */
 
 .myfooter{

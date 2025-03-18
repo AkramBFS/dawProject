@@ -11,7 +11,7 @@ const products = [
         description: "Comfortable and stylish T-shirts for men."
     },
     {
-        id: 2,
+        id: 1,
         name: "T-Shirts for Men (L)",
         price: 41.99,
         image: "image/prods/T-Shirts for Men.jpg",
@@ -21,7 +21,7 @@ const products = [
         description: "Comfortable and stylish T-shirts for men."
     },
     {
-        id: 3,
+        id: 2,
         name: "Sports Shoes (39)",
         price: 139.99,
         image: "image/prods/Sports Shoes.webp",
@@ -31,7 +31,7 @@ const products = [
         description: "High-performance sports shoes for all activities."
     },
     {
-        id: 4,
+        id: 2,
         name: "Sports Shoes (40)",
         price: 139.99,
         image: "image/prods/Sports Shoes.webp",
@@ -41,7 +41,7 @@ const products = [
         description: "High-performance sports shoes for all activities."
     },
     {
-        id: 5,
+        id: 2,
         name: "Sports Shoes (41)",
         price: 139.99,
         image: "image/prods/Sports Shoes.webp",
@@ -51,7 +51,7 @@ const products = [
         description: "High-performance sports shoes for all activities."
     },
     {
-        id: 6,
+        id: 2,
         name: "Sports Shoes (42)",
         price: 139.99,
         image: "image/prods/Sports Shoes.webp",
@@ -61,7 +61,7 @@ const products = [
         description: "High-performance sports shoes for all activities."
     },
     {
-        id: 7,
+        id: 2,
         name: "Sports Shoes (43)",
         price: 139.99,
         image: "image/prods/Sports Shoes.webp",
@@ -71,7 +71,7 @@ const products = [
         description: "High-performance sports shoes for all activities."
     },
     {
-        id: 8,
+        id: 3,
         name: "Casual Hoodies (S)",
         price: 59.99,
         image: "image/prods/Casual Hoodies.avif",
@@ -81,7 +81,7 @@ const products = [
         description: "Soft and cozy hoodies for casual wear."
     },
     {
-        id: 9,
+        id: 3,
         name: "Casual Hoodies (L)",
         price: 59.99,
         image: "image/prods/Casual Hoodies.avif",
@@ -91,7 +91,7 @@ const products = [
         description: "Soft and cozy hoodies for casual wear."
     },
     {
-        id: 10,
+        id: 4,
         name: "Black Jeans (S)",
         price: 59.99,
         image: "image/prods/Black jeans.png",
@@ -101,7 +101,7 @@ const products = [
         description: "Classic black jeans for a sleek look."
     },
     {
-        id: 11,
+        id: 4,
         name: "Black Jeans (L)",
         price: 59.99,
         image: "image/prods/Black jeans.png",
@@ -111,7 +111,7 @@ const products = [
         description: "Classic black jeans for a sleek look."
     },
     {
-        id: 12,
+        id: 5,
         name: "Socks (S)",
         price: 15.99,
         image: "image/prods/socks.webp",
@@ -121,7 +121,7 @@ const products = [
         description: "Comfortable and durable socks for everyday wear."
     },
     {
-        id: 13,
+        id: 5,
         name: "Socks (L)",
         price: 15.99,
         image: "image/prods/socks.webp",
@@ -131,7 +131,7 @@ const products = [
         description: "Comfortable and durable socks for everyday wear."
     },
     {
-        id: 14,
+        id: 6,
         name: "Sweatpants (S)",
         price: 80.99,
         image: "image/prods/Sweatpants.webp",
@@ -141,7 +141,7 @@ const products = [
         description: "Comfortable sweatpants for lounging or workouts."
     },
     {
-        id: 15,
+        id: 6,
         name: "Sweatpants (L)",
         price: 80.99,
         image: "image/prods/Sweatpants.webp",
@@ -158,6 +158,25 @@ const productId = urlParams.get("id");
 const product = products.find(p => p.id == productId);
 
 if (product) {
+    // Function to update product details based on selected size
+    function updateProductDetails(size) {
+        const selectedProduct = products.find(p => p.id == productId && p.size === size);
+
+        if (selectedProduct) {
+            // Update the product image
+            document.querySelector(".product-image").src = selectedProduct.image;
+
+            // Update the product name
+            document.querySelector(".product-name").textContent = selectedProduct.name;
+
+            // Update the product price
+            document.querySelector(".product-price").textContent = `Price: $${selectedProduct.price.toFixed(2)}`;
+
+            // Update the selected size display
+            document.getElementById("selected-size").textContent = size;
+        }
+    }
+
     // Insert product details into the page
     document.getElementById("product-details").innerHTML = `
         <img src="${product.image}" alt="${product.name}" class="product-image">
@@ -207,8 +226,8 @@ if (product) {
             // Update the selected size
             selectedSize = option.getAttribute("data-size");
 
-            // Update the selected size display
-            selectedSizeDisplay.textContent = selectedSize;
+            // Update the product details based on the selected size
+            updateProductDetails(selectedSize);
         });
     });
 
@@ -219,14 +238,20 @@ if (product) {
             return;
         }
 
-        // Add the product to the cart with the selected size
-        const productToAdd = {
-            ...product, // Spread the existing product details
-            size: selectedSize // Override the size with the selected size
-        };
+        // Find the correct product variant based on the selected size
+        const productToAdd = products.find(p => p.id == productId && p.size === selectedSize);
 
+        // Debugging: Log the product being added
+        console.log("Product to Add:", productToAdd);
+
+        if (!productToAdd) {
+            alert("Product variant not found. Please try again.");
+            return;
+        }
+
+        // Add the product to the cart
         let cart = JSON.parse(localStorage.getItem("cart")) || [];
-        const existingProduct = cart.find(p => p.id == productId && p.size === selectedSize);
+        const existingProduct = cart.find(p => p.id == productToAdd.id && p.size === productToAdd.size);
 
         if (existingProduct) {
             existingProduct.quantity = (existingProduct.quantity || 1) + 1; // Increment quantity
