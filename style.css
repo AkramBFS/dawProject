@@ -73,6 +73,7 @@ nav a {
     width: 100vw;
     overflow: hidden;
     position: relative;
+
 }
 .carousel .list .item{
     width: 100%;
@@ -434,12 +435,14 @@ nav a {
 
 .myfooter{
     margin-top: 25px;
+    margin-left: -25px;
+    margin-right: -25px;
 }
 
 .site-footer
 {
   background-color:#26272b;
-  padding:45px 0 20px;
+  padding:45px 5px 20px;
   font-size:15px;
   line-height:24px;
   color:#737373;
@@ -515,6 +518,7 @@ nav a {
   .site-footer [class^=col-]
   {
     margin-bottom:30px
+    
   }
 }
 @media (max-width:767px)
