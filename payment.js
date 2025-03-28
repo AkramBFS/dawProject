@@ -96,7 +96,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // If all validations pass, proceed with payment
         alert("Payment successful! Thank you for your purchase.");
-        // You can add further logic here, such as sending data to a server
+        // return to homepage rak fahm
+        window.location.href = "index.html";
     });
 });
 
