@@ -3,31 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Details</title>
-    <link rel="stylesheet" href="product.css">
+    <title>Product Details | VERA</title>
+    <link rel="stylesheet" href="/dawProject/css/style.css">
+    <link rel="stylesheet" href="/dawProject/css/product.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <header>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="cart.html">Cart</a>
+            <a href="/dawProject/html/index.html">Home</a>
+            <a href="/dawProject/html/cart.html">Cart</a>
         </nav>
     </header>
 
-    <div class="product-details-container">
+    <main class="product-details-container">
         <div id="product-details">
-            <!-- Dynamically Inserted Product Details -->
+            <!-- Product will be loaded here by JavaScript -->
+            <div class="loading">
+                <i class="fas fa-spinner fa-spin"></i>
+                <p>Loading product details...</p>
+            </div>
         </div>
-    </div>
+    </main>
 
-    <div class="button-container">
-        <button onclick="addToCart()" class="add-to-cart-btn">Add to Cart</button>
-        <a href="cart.html" class="go-to-cart-btn">Go to Cart</a>
-    </div>
-
-    <script src="product_details.js"></script>
+    <script src="/dawProject/js/product_details.js"></script>
 </body>
+</html>
+
 <footer class="site-footer myfooter">
     <div class="container">
         <div class="row">

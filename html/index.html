@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/dawProject/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <div class="hamburger">&#9776;</div>
+        <nav>
+            <a href="/dawProject/html/index.html">Home</a>
+            <a href="#" id="see-more-contact">Contacts</a>
+            <a href="#" id="see-more-about">About</a>
+        </nav>
+    </header>
+
+    <div class="carousel">
+        <!-- list item -->
+        <div class="list">
+            <div class="item">
+                <img src="/dawProject/image/img1.jpg" alt="Welcome to VERA">
+                <div class="content">
+                    <div class="author">VERA CLOTHING</div>
+                    <div class="title">RAMADAN-SPECIALSALE</div>
+                    <div class="topic">UP TO 50% OFF!</div>
+                    <div class="des">
+
+                       Get up to 50% on the 2025 exclusive ramadan special sale!
+                    </div>
+                    <div class="buttons">
+                        <button id="see-more-home">SEE MORE</button>
+                        <button> <a href="/dawProject/html/login.html">LOGIN</a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="/dawProject/image/img2.webp" alt="New Season">
+                <div class="content">
+                    <div class="author">VERA CLOTHING</div>
+                    <div class="title">New Season</div>
+                    <div class="topic">FEATURED PRODUCTS</div>
+                    <div class="des">
+                        Discover the best of Vera—a curated selection of our standout pieces designed to elevate your wardrobe. From timeless essentials to bold statement pieces, our featured collection highlights must-have styles crafted with premium fabrics, modern silhouettes, and effortless versatility.
+                    </div>
+                    <div class="buttons">
+                        <button id="see-more-products">SEE MORE</button>
+                        <button> <a href="/dawProject/html/login.html">LOGIN</a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="/dawProject/image/img3.webp" alt="Contact Us">
+                <div class="content">
+                    <div class="author">VERA CLOTHING</div>
+                    <div class="title">Contact Us</div>
+                    <div class="topic">For more information</div>
+                    <div class="des">
+                        Check out our socials!
+                    </div>
+                    <div class="buttons">
+                        <button id="see-more-contact">SEE MORE</button>
+                        <button> <a href="/dawProject/html/login.html">LOGIN</a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="/dawProject/image/img4.webp" alt="About VERA">
+                <div class="content">
+                    <div class="author">VERA CLOTHING</div>
+                    <div class="title">About Us</div>
+                    <div class="topic">Find Out More!</div>
+                    <div class="des">
+                        At Vera, we don’t just create clothing—we craft experiences. Designed for those who embrace confidence and individuality, our collections blend modern aesthetics with timeless versatility. Every piece is made with high-quality fabrics, thoughtful details, and an effortless fit to keep you looking and feeling your best.
+                    </div>
+                    <div class="buttons">
+                        <button id="see-more-about">SEE MORE</button>
+                        <button> <a href="/dawProject/html/login.html">LOGIN</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- list thumnail -->
+        <div class="thumbnail">
+            <div class="item">
+                <img src="/dawProject/image/img1.jpg" alt="Welcome to VERA">
+                <div class="content">
+                    <div class="title">
+                        Welcome to VERA!
+                    </div>
+                    <div class="description">
+                        VERA home
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="/dawProject/image/img2.webp">
+                <div class="content">
+                    <div class="title">
+                        Products!
+                    </div>
+                    <div class="description">
+                        Featured products and more.
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="/dawProject/image/img3.webp">
+                <div class="content">
+                    <div class="title">
+                        Contact us!
+                    </div>
+                    <div class="description">
+                        Contact details.
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="/dawProject/image/img4.webp">
+                <div class="content">
+                    <div class="title">
+                        About VERA!
+                    </div>
+                    <div class="description">
+                        About.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- next prev -->
+
+        <div class="arrows">
+            <button id="prev"><</button>
+            <button id="next">></button>
+        </div>
+        <!-- time running -->
+        <div class="time"></div>
+    </div>
+
+        <!-- Product Section-->
+        <section id="product-section">
+            <div class="small-container">
+                <div id="product-list">
+                    <h2>Featured</h2>
+                    <div class="line1"></div>
+                    <div class="child" id="featured-products">
+                        <div class="loading">Loading products...</div>
+                    </div>
+                    
+                    <h2>Our Products</h2>
+                    <div class="filters">
+                        <label for="categoryFilter">Category:</label>
+                        <select id="categoryFilter">
+                            <option value="all">All</option>
+                        </select>
+                        
+                        <label for="sizeFilter">Size:</label>
+                        <select id="sizeFilter">
+                            <option value="all">All</option>
+                        </select>
+                    </div>
+                    <div class="line1"></div>
+                    <div class="child" id="all-products">
+                        <div class="loading">Loading products...</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Only load scripts once -->
+        <script src="/dawProject/js/app.js"></script>
+        <script src="/dawProject/js/load-products.js"></script>
+       <script>
+                function initFilters(products) {
+            const categoryFilter = document.getElementById('categoryFilter');
+            const sizeFilter = document.getElementById('sizeFilter');
+            
+            if (!categoryFilter || !sizeFilter) return;
+            
+            // Clear existing options (keeping "All" option)
+            categoryFilter.innerHTML = '<option value="all">All</option>';
+            sizeFilter.innerHTML = '<option value="all">All</option>';
+            
+            // Get unique categories
+            const categories = [...new Set(products.map(p => p.category))];
+            categories.forEach(cat => {
+                const option = document.createElement('option');
+                option.value = cat;
+                option.textContent = cat;
+                categoryFilter.appendChild(option);
+            });
+            
+            // Get unique sizes from all product variants
+            const sizes = new Set();
+            products.forEach(product => {
+                if (product.variants && product.variants.length > 0) {
+                    product.variants.forEach(variant => {
+                        if (variant.size) {
+                            sizes.add(variant.size);
+                        }
+                    });
+                }
+            });
+            
+            // Add size options
+            sizes.forEach(size => {
+                const option = document.createElement('option');
+                option.value = size;
+                option.textContent = size;
+                sizeFilter.appendChild(option);
+            });
+
+            // Add event listeners for filtering
+            categoryFilter.addEventListener('change', filterProducts);
+            sizeFilter.addEventListener('change', filterProducts);
+        }
+
+        function filterProducts() {
+            const selectedCategory = document.getElementById('categoryFilter').value;
+            const selectedSize = document.getElementById('sizeFilter').value;
+            const productCards = document.querySelectorAll('.product-card');
+            
+            productCards.forEach(card => {
+                const category = card.dataset.category;
+                const sizes = card.dataset.sizes ? card.dataset.sizes.split(',') : [];
+                
+                const categoryMatch = selectedCategory === 'all' || category === selectedCategory;
+                const sizeMatch = selectedSize === 'all' || sizes.includes(selectedSize);
+                
+                card.style.display = categoryMatch && sizeMatch ? 'block' : 'none';
+            });
+        }
+       </script>
+
+</body>
+<footer class="site-footer myfooter">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <h6>About</h6>
+                <p class="text-justify">
+                    At Vera, we believe fashion is more than just clothing—it’s an expression of who you are. Inspired by modern minimalism with a touch of bold individuality, our collections are designed for those who embrace confidence, creativity, and effortless style.
+
+From timeless essentials to statement pieces, every item is crafted with quality, comfort, and sustainability in mind. We focus on premium fabrics, ethical production, and designs that empower you to move through life with ease and elegance.
+
+Vera is more than a brand; it’s a movement. A space where fashion meets authenticity, where trends are redefined, and where you can truly be yourself.
+
+Welcome to Vera—where style meets substance.
+                </p>
+            </div>
+
+            <div class="col-xs-6 col-md-3">
+                <h6>Categories</h6>
+                <ul class="footer-links">
+                    <li><a href="">Men</a></li>
+                    <li><a href="">Women</a></li>
+                    <li><a href="">Kids</a></li>
+                    <li><a href="">Footwears</a></li>
+                </ul>
+            </div>
+
+            <div class="col-xs-6 col-md-3">
+                <h6>Quick Links</h6>
+                <ul class="footer-links">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-sm-6 col-xs-12">
+                <p class="copyright-text">Copyright &copy; 2025 All Rights Reserved
+                </p>
+            </div>
+
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <ul class="social-icons">
+                    <li><a class="facebook" href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                    <li><a class="twitter" href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                    <li><a class="dribbble" href="#"><i class="fa-brands fa-dribbble"></i></a></li>
+                    <li><a class="linkedin" href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+</html>
